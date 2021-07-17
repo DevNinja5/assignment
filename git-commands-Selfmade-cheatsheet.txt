@@ -1,0 +1,86 @@
+###################### This cheatsheet is made by Rahul Soni  ####################################
+<---------Setup git ---------------------------------------------------------------------->
+git config --global user.name Rahul_Soni 
+git config --global user.email rahul989741@gmail.com
+git init    //makes git repository
+
+
+<-------------Git status -------------------------------->
+git status  //show files status
+
+
+git add index.html  //stages the <file>
+git add -A  //stages all files
+git commit  -> press "i" then type "Initial commit" press esc button and type " :wq " hit enter key.
+//Initial commit to start tracking
+git commit -a   // commit all files
+git commit -a  -m " message for commit" // commit all files with a message
+git commit -m " proper message for commit all file in directory "
+git commit <file_name.ext> -m "a message to bash"    //commit the file with a message
+
+
+
+
+
+git checkout <file_name.ext>   //updates the file to its last commit
+git checkout -f    //update all files to its last commit
+
+git log  //show all commits history
+git log -p -3   //shows last 3 commits with a diff output
+
+git diff    //compares working tree with staging area
+git diff --staged   //compares staging are to last commit
+
+git rm --cached <filename>    // removing file from staging area or working tree (untrack the file )
+git rm <filename>    //removes the file from directory nd from harddisk
+
+touch .gitignore   //creates the .gitignore file 
+//put files names in .gitignore file that you dont wanna track.
+//make sure to ignore that file the file should be untracked.
+//  *.txt   -> it ignores all files with ext .txt
+//   /file.txt  ignores only the files in the root folder where .gitignores exist
+//     folder_name/  to ignore the whole folder
+
+
+<----------BRANCH--------->
+git branch <branch_name>    // creates  a new branch
+git branch   //show current branch
+git checkout <branch_name>    //  switched to that <branch_name>
+git checkout -b <branch_name>   //creates and switches to new branch <branch_name>
+
+git merge <branch_name>   //merges the branch <branch_name> to current branch
+
+
+
+
+<----------------Steps for push the local repos ----------------------->
+1. open github and login with your account
+2. Click on + -> new repository
+3. Enter Repository name and description
+4.  choose access specifier (public / private)
+5. click on Create repository
+
+<-----------------Remote location------------------->
+git remote add origin https://github.com/dsbchdcdcgdgc.git   //add address in the variable_name
+git remote   // shows all variable addresses
+git remote -v   //shows variable_names follwed by address in it and (operations)
+git push origin master   /// push repos on server or remote   "   git push <remote_name> <branch_name>"
+ 
+
+
+git commit --amend
+git commit --amend -m "message"
+git commit --amend  --no-edit
+
+git stash 
+git stash save "message"
+git stash apply 
+git stash apply <stash@[index]>
+
+
+
+
+
+
+
+
