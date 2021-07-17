@@ -1,0 +1,13 @@
+git worktree add <path>
+git worktree add ../hot-fix
+
+git worktree list
+
+git worktree remove <worktree-name>
+git worktree remove hot-fix
+
+git worktree add -b <branchname> <path>
+git worktree add -b feature-xyz ../feature-xyz      // If you want to give you branch a unique name then you can use the -b flag with the add command.
+
+git worktree add -b <branch-name> <PATH> <remote>/<branch-name>      //Let’s say you want to switch to a new branch that is tracking the branch at remote, where you want to push changes to.
+git worktree add -b feature-zzz ../feature-x origin/feature-zzz
