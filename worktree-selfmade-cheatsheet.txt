@@ -1,13 +1,24 @@
 git worktree add <path>
 git worktree add ../hot-fix
-
-git worktree list
-
-git worktree remove <worktree-name>
-git worktree remove hot-fix
-
 git worktree add -b <branchname> <path>
 git worktree add -b feature-xyz ../feature-xyz      // If you want to give you branch a unique name then you can use the -b flag with the add command.
-
 git worktree add -b <branch-name> <PATH> <remote>/<branch-name>      //Let’s say you want to switch to a new branch that is tracking the branch at remote, where you want to push changes to.
 git worktree add -b feature-zzz ../feature-x origin/feature-zzz
+
+git worktree list         //List details of each working tree. The main working tree is listed first, followed by each of the linked working trees.
+git worktree list --porcelain    //output in an easy-to-parse format for scripts. This format will remain stable across Git versions and regardless of user configuration.
+
+git worktree lock <worktree>			// to prevent its administrative files from being pruned automatically  &  This also prevents it from being moved or deleted. 
+git worktree lock --reason "why i'm locking this tree" <worktree>
+
+git worktree move <worktree> <new-path>
+
+git worktree prune 								//Prune working tree information in $GIT_DIR/worktrees.
+git worktree prune -n                         // do not remove anything; just report what it would remove. 
+git worktree prune -v                         //report all removals
+git worktree prune --expire <time>   //only expire unused working trees older than <time>  &  With list, annotate missing working trees as prunable if they are older than <time>
+
+git worktree remove <worktree>	   //Remove a working tree. Only clean working trees (no untracked files and no modification in tracked files) can be removed
+git worktree remove -f <worktree>	   //Unclean working trees or ones with submodules can be removed with --force. The main working tree cannot be removed.
+
+git worktree unlock <worktree>    //unlocks a worktree
